@@ -7,9 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SQLConections {
-	 public static String URL_POSTGRES = "jdbc:postgresql://localhost:5432/aula2018_2";
-	    public static String USUARIO_POSTGRES = "postgres";
-	    public static String SENHA_POSTGRES = "postgres";
+	 public static String URL_POSTGRES = "jdbc:postgresql://localhost:5432/postgres";
+	    public static String USUARIO_POSTGRES = "manoelson";
+	    public static String SENHA_POSTGRES = "Tambau10";
 
 	    private static Connection conexao = null;
 

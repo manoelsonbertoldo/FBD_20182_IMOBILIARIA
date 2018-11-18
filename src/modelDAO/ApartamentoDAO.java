@@ -1,6 +1,7 @@
 package modelDAO;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import modelVO.Apartamento;
 
 public class ApartamentoDAO implements IApartamentoDAO{
 private Connection conexao;
-//private PreparedStatemente statement;
+private PreparedStatement statement;
 private ResultSet result;
 
 	@Override

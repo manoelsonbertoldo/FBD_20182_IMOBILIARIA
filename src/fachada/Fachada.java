@@ -141,7 +141,7 @@ public class Fachada implements IFachada{
 
 	@Override
 	public void salvarCliente(Cliente cliente) {
-		// TODO Auto-generated method stub
+		this.clienteBO.salvar(cliente);
 		
 	}
 
