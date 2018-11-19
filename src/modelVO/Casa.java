@@ -25,6 +25,11 @@ public class Casa extends Imoveis{
 		this.areaConstruida = areaConstruida;
 	}
 
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	

@@ -1,14 +1,31 @@
 package modelDAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import modelVO.Municipio;
+import sql.SQLConections;
+import sql.SQLUtil;
 
 public class MunicipioDAO implements IMunicipioDAO{
-
+	private Connection conexao;
+	private PreparedStatement statement;
+	private ResultSet result;
 	@Override
 	public void salvar(Municipio municipio) {
-		// TODO Auto-generated method stub
+		try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.Municipio.INSERT);
+            this.statement.setString(1, municipio.getNome());
+            statement.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(MunicipioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
 		
 	}
 

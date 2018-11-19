@@ -32,6 +32,10 @@ public class Contato {
 	public String toString() {
 		return "Contato [id=" + id + ", tipo=" + tipo + ", descricao=" + descricao + "]";
 	}
+	public static String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

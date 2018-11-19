@@ -1,14 +1,31 @@
 package modelDAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import modelVO.Estado;
+import sql.SQLConections;
+import sql.SQLUtil;
 
 public class EstadoDAO implements IEstadoDAO{
-
+	private Connection conexao;
+	private PreparedStatement statement;
+	private ResultSet result;
 	@Override
 	public void salvar(Estado estado) {
-		// TODO Auto-generated method stub
+		try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.Estado.INSERT);
+            this.statement.setString(1, estado.getNome());
+            statement.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(EstadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
 		
 	}
 

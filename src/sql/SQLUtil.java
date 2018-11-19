@@ -112,7 +112,7 @@ public static class Corretor {
                 
                 + COL_VALOR + "" + " ) values (?,?,?,?,?,?,?,?,?,?,?,?,?) returning id";
     }
-    public static class municipio {
+    public static class Municipio {
 
         public static final String NOME_TABELA = "municipio";
         public static final String COL_NOME = "NOME";
