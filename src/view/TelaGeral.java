@@ -11,7 +11,7 @@ public class TelaGeral extends JFrame {
 		setSize(x,y);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setVisible(true);
+		setVisible(false);
 		
 	}
 

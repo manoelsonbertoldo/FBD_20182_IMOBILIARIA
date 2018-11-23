@@ -1,9 +1,13 @@
 package aplicacao;
 
+import controller.Controller;
 import enuns.TipoDocumento;
 import fachada.Fachada;
 import fachada.IFachada;
 import modelVO.Cliente;
+import view.TelaCadastro;
+import view.TelaInicial;
+import view.TelaLogin;
 
 public class App {
 
@@ -38,6 +42,11 @@ public class App {
 //        cliente.setContatos(contatos);
         
         fachada1.salvarCliente(cliente);
+        TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
+      TelaLogin telaLogin= new TelaLogin("LOGIN", 150, 200);
+      TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
+      Controller control= new Controller(telaLogin, telaInicial,cadastro);
+//      		new TelaCadastro("CADASTRO", 900, 600);
      
         
     }
