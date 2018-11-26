@@ -43,7 +43,7 @@ public class App {
         
         fachada1.salvarCliente(cliente);
         TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
-      TelaLogin telaLogin= new TelaLogin("LOGIN", 150, 200);
+      TelaLogin telaLogin= new TelaLogin("LOGIN", 900, 600);
       TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
       Controller control= new Controller(telaLogin, telaInicial,cadastro);
 //      		new TelaCadastro("CADASTRO", 900, 600);
