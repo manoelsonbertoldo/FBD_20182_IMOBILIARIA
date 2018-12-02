@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Proprietario;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -35,8 +36,24 @@ public class ProprietarioDAO implements IProprietarioDAO{
 
 	@Override
 	public Proprietario buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Proprietario proprietario = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Proprietario.COL_NOME, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	proprietario  = new Proprietario ();
+            	proprietario .setId(result.getInt(1));
+            	proprietario .setNome(result.getString(SQLUtil.Proprietario.COL_NOME));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ProprietarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return proprietario ;
+    
 	}
 
 	@Override

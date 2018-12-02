@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Contato;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -34,8 +35,24 @@ public class ContatoDAO implements IContatoDAO{
 
 	@Override
 	public Contato buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Contato contato = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Contato.COL_DESCRICAO, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	contato = new Contato();
+            	contato.setId(result.getInt(1));
+            	contato.setDescricao(result.getString(SQLUtil.Contato.COL_DESCRICAO));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ContatoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return contato;
+    
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Estado;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -31,8 +32,24 @@ public class EstadoDAO implements IEstadoDAO{
 
 	@Override
 	public Estado buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Estado estado  = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Estado.COL_NOME, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	estado = new Estado();
+            	estado.setId(result.getInt(1));
+            	estado.setNome(result.getString(SQLUtil.Estado.COL_NOME));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EstadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return estado;
+    
 	}
 
 	@Override

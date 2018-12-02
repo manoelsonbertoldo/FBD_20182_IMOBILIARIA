@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Vender;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -39,8 +40,24 @@ public class VenderDAO implements IVenderDAO{
 
 	@Override
 	public Vender buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Vender vender = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Vender.COL_VALORTOTAL, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	vender = new Vender();
+            	vender.setId(result.getInt(1));
+            	vender.setValorTotal(result.getDouble(SQLUtil.Vender.COL_VALORTOTAL));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VenderDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return vender;
+    
 	}
 
 	@Override

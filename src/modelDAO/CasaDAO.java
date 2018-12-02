@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Apartamento;
 import modelVO.Casa;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -31,8 +32,23 @@ public class CasaDAO implements ICasaDAO{
 
 	@Override
 	public Casa buscarPorId(int id) {
-		
-		return null;
+		Casa casa = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Casa.COL_AREACONSTRUIDA, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	casa = new Casa();
+            	casa.setId(result.getInt(1));
+            	casa.setAreaConstruida(result.getDouble(SQLUtil.Casa.COL_AREACONSTRUIDA));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CasaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casa;
 	}
 
 	@Override

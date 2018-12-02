@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Endereco;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -39,8 +40,24 @@ public class EnderecoDAO implements IEnderecoDAO {
 
 	@Override
 	public Endereco buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Endereco endereco = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Endereco.COL_RUA, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	endereco  = new Endereco ();
+            	endereco .setId(result.getInt(1));
+            	endereco .setRua(result.getString(SQLUtil.Endereco.COL_RUA));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EnderecoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return endereco ;
+    
 	}
 
 	@Override

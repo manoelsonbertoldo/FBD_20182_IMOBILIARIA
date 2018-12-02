@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import modelVO.Apartamento;
+import modelVO.Cliente;
 import sql.SQLConections;
 import sql.SQLUtil;
 
@@ -47,8 +48,24 @@ private ResultSet result;
 
 	@Override
 	public Apartamento buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Apartamento apartamento = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Apartamento.COL_PREDIO, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	apartamento = new Apartamento();
+            	apartamento.setId(result.getInt(1));
+            	apartamento.setPredio(result.getString(SQLUtil.Apartamento.COL_PREDIO));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ApartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return apartamento;
+    
 	}
 
 	@Override

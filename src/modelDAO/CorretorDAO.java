@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Corretor;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -34,8 +35,24 @@ public class CorretorDAO implements ICorretorDAO{
 
 	@Override
 	public Corretor buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Corretor corretor = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Corretor.COL_NOME, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	corretor = new Corretor();
+            	corretor.setId(result.getInt(1));
+            	corretor.setNome(result.getString(SQLUtil.Corretor.COL_NOME));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CorretorDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return corretor;
+    
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelVO.Cliente;
 import modelVO.Imoveis;
 import sql.SQLConections;
 import sql.SQLUtil;
@@ -46,8 +47,24 @@ public class ImoveisDAO implements IImoveisDAO{
 
 	@Override
 	public Imoveis buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Imoveis imoveis = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Imoveis.COL_TIPO, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+            	imoveis = new Imoveis();
+            	imoveis.setId(result.getInt(1));
+            	imoveis.setTipo(result.getString(SQLUtil.Imoveis.COL_TIPO));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ImoveisDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return imoveis;
+    
 	}
 
 	@Override
