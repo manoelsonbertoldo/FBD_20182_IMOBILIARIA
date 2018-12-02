@@ -24,6 +24,7 @@ private ResultSet result;
 	try {	
         this.conexao = SQLConections.getInstance();
         this.statement = conexao.prepareStatement(SQLUtil.Apartamento.INSERT);
+        
         this.statement.setString(1, apartamento.getPredio());
         
         this.result = this.statement.executeQuery();
@@ -38,7 +39,7 @@ private ResultSet result;
 //        }
 
     } catch (SQLException ex) {
-        Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(ApartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
     }
 	// TODO Auto-generated method stub
 		

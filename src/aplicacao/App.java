@@ -4,6 +4,7 @@ import controller.Controller;
 import enuns.TipoDocumento;
 import fachada.Fachada;
 import fachada.IFachada;
+import modelVO.Apartamento;
 import modelVO.Cliente;
 import view.TelaCadastro;
 import view.TelaInicial;
@@ -18,6 +19,23 @@ public class App {
         cliente.setNome("Heldon Jose");
         cliente.setTipo(TipoDocumento.CPF);
         cliente.setDocumento("11111");
+        
+//        
+//        Cliente cliente1 = new Cliente();
+//        cliente1.setCpf("050");
+//        cliente1.setNome("Heldon Jose");
+//        cliente1.setTipo(TipoDocumento.CPF);
+//        cliente1.setDocumento("11111");
+//        0
+//        Cliente cliente2 = new Cliente();
+//        cliente2.setCpf("050");
+//        cliente2.setNome("Heldon Jose");
+//        cliente2.setTipo(TipoDocumento.CPF);
+//        cliente2.setDocumento("11111");
+//        
+//        Apartamento apartamento =new Apartamento();
+//        
+//        apartamento.setPredio("edificio");
         
 //        Endereco end  = new Endereco();
 //        end.setCep("58701090");
@@ -41,13 +59,14 @@ public class App {
 //        
 //        cliente.setContatos(contatos);
         
-        fachada1.salvarCliente(cliente);
-        TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
+       //fachada1.salvarCliente(cliente);
+      // fachada1.salvarApartamento(apartamento);
+      TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
       TelaLogin telaLogin= new TelaLogin("LOGIN", 900, 600);
       TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
       Controller control= new Controller(telaLogin, telaInicial,cadastro);
 //      		new TelaCadastro("CADASTRO", 900, 600);
-     
+    
         
     }
 

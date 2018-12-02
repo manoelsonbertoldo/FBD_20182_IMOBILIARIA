@@ -2,25 +2,27 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.CorretorDAO;
+import modelDAO.ICorretorDAO;
 import modelVO.Corretor;
 
 public class CorretorBO implements ICorretorBO{
-
+ICorretorDAO corretorDAO;
 	public CorretorBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.corretorDAO=new CorretorDAO();
 	}
 
 	@Override
 	public void salvar(Corretor corretor) {
-		// TODO Auto-generated method stub
+		this.corretorDAO.salvar(corretor);
 		
 	}
 
 	@Override
 	public Corretor buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.corretorDAO.buscarPorId(id);
 	}
 
 	@Override

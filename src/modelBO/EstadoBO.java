@@ -2,25 +2,26 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.EstadoDAO;
+import modelDAO.IEstadoDAO;
 import modelVO.Estado;
 
 public class EstadoBO implements IEstadoBO{
-
+IEstadoDAO estadoDAO;
 	public EstadoBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.estadoDAO=new EstadoDAO();
 	}
 
 	@Override
 	public void salvar(Estado estado) {
-		// TODO Auto-generated method stub
-		
+		this.estadoDAO.salvar(estado);		
 	}
 
 	@Override
 	public Estado buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.estadoDAO.buscarPorId(id);
 	}
 
 	@Override

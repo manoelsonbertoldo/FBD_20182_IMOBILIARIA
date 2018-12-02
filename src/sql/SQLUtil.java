@@ -4,8 +4,10 @@ public class SQLUtil {
 	public static class Apartamento {
 
         public static final String NOME_TABELA = "apartamento";
+        //public static final String COL_ID = "id";
         public static final String COL_PREDIO = "predio";
-        public static final String INSERT = "insert into " + NOME_TABELA + "(" + COL_PREDIO + ") values (?)";
+        public static final String INSERT = "insert into " + NOME_TABELA + "(" + COL_PREDIO + 
+				" ) values (?)";
     }
 	public static class Casa {
 		
@@ -16,9 +18,9 @@ public class SQLUtil {
 	public static class Cliente {
 		
 		public static final String NOME_TABELA = "cliente";
-		public static final String COL_CPF = "nome";
-		public static final String COL_NOME = "cpf";
-		public static final String COL_TIPO = "tipo";
+		public static final String COL_CPF = "cpf";
+		public static final String COL_NOME = "nome";
+		public static final String COL_TIPO = "tipodocumento";
 		public static final String COL_DOCUMENTO = "documento";
 		
 		

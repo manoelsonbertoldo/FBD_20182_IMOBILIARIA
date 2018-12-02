@@ -2,25 +2,27 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.EnderecoDAO;
+import modelDAO.IEnderecoDAO;
 import modelVO.Endereco;
 
 public class EnderecoBO implements IEnderecoBO{
-
+IEnderecoDAO enderecoDAO;
 	public EnderecoBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.enderecoDAO=new EnderecoDAO();
 	}
 
 	@Override
 	public void salvar(Endereco endereco) {
-		// TODO Auto-generated method stub
+		this.enderecoDAO.salvar(endereco);
 		
 	}
 
 	@Override
 	public Endereco buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.enderecoDAO.buscarPorId(id);
 	}
 
 	@Override

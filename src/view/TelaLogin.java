@@ -32,10 +32,10 @@ public class TelaLogin extends TelaGeral {
 		entrarButton= new JButton("Enter");
 		
 		add(loginLabel).setBounds(600, 50, 100, 20);
-		add(loginField).setBounds(700, 50, 100, 20);
+		add(loginField).setBounds(650, 50, 200, 20);
 		add(senhaLabel).setBounds(600, 100, 100, 20);
-		add(senhaField).setBounds(700, 100, 100, 20);
-		add(entrarButton).setBounds(700, 150, 100, 20);
+		add(senhaField).setBounds(650, 100, 200, 20);
+		add(entrarButton).setBounds(750, 150, 100, 20);
 		add(mbsLabel).setBounds(350, 420, 300, 50);
 		add(fundo).setBounds(0, 0, 900, 600);
 		setVisible(true);

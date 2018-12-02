@@ -2,25 +2,28 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.CasaDAO;
+import modelDAO.ICasaDAO;
 import modelVO.Casa;
 
 public class CasaBO implements ICasaBO{
-
+ICasaDAO casaDAO;
 	public CasaBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.casaDAO=new CasaDAO();
+		
 	}
 
 	@Override
 	public void salvar(Casa casa) {
-		// TODO Auto-generated method stub
+		this.casaDAO.salvar(casa);
 		
 	}
 
 	@Override
 	public Casa buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.casaDAO.buscarPorId(id);
 	}
 
 	@Override

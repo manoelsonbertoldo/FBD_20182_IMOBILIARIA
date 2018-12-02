@@ -31,6 +31,7 @@ public class Apartamento extends Imoveis {
 	public void setPredio(String predio) {
 		this.predio = predio;
 	}
+	
 
 
 

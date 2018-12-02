@@ -2,18 +2,20 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.ApartamentoDAO;
+import modelDAO.IApartamentoDAO;
 import modelVO.Apartamento;
 
 public class ApartamentoBO implements IApartamentoBO{
-
+IApartamentoDAO apartamenentoDAO;
 	public ApartamentoBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.apartamenentoDAO=new ApartamentoDAO();
 	}
 
 	@Override
 	public void salvar(Apartamento apartamento) {
-		// TODO Auto-generated method stub
+		this.apartamenentoDAO.salvar(apartamento);
 		
 	}
 

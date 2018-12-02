@@ -47,8 +47,26 @@ public class ClienteDAO implements IClientaDAO{
 
 	@Override
 	public Cliente buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Cliente cliente = null;
+        try {
+            this.conexao = SQLConections.getInstance();
+            this.statement = this.conexao.prepareStatement(SQLUtil.selectById(SQLUtil.Cliente.COL_NOME, id));
+            this.result = this.statement.executeQuery();
+
+            if (result.next()) {
+                cliente = new Cliente();
+                cliente.setId(result.getInt(1));
+                cliente.setNome(result.getString(SQLUtil.Cliente.COL_NOME));
+            }
+            this.conexao.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cliente;
+    
+
+		
 	}
 
 	@Override

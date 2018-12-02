@@ -2,25 +2,28 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.ClienteDAO;
+import modelDAO.IClientaDAO;
 import modelVO.Cliente;
 
 public class ClienteBO implements IClienteBO{
-
+IClientaDAO clienteDAO;
 	public ClienteBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.clienteDAO=new ClienteDAO();
 	}
 
 	@Override
 	public void salvar(Cliente cliente) {
-		// TODO Auto-generated method stub
+         this.clienteDAO.salvar(cliente);
+
 		
 	}
 
 	@Override
 	public Cliente buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.clienteDAO.buscarPorId(id);
 	}
 
 	@Override

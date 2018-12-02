@@ -2,25 +2,27 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.IMunicipioDAO;
+import modelDAO.MunicipioDAO;
 import modelVO.Municipio;
 
 public class MunicipioBO implements IMunicipioBO {
-
+IMunicipioDAO municipioDAO;
 	public MunicipioBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.municipioDAO=new MunicipioDAO();
 	}
 
 	@Override
 	public void salvar(Municipio municipio) {
-		// TODO Auto-generated method stub
+		this.municipioDAO.salvar(municipio);
 		
 	}
 
 	@Override
 	public Municipio buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.municipioDAO.buscarPorId(id);
 	}
 
 	@Override

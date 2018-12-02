@@ -2,25 +2,27 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.ContatoDAO;
+import modelDAO.IContatoDAO;
 import modelVO.Contato;
 
 public class ContatoBO implements IContatoBO{
-
+IContatoDAO contatoDAO;
 	public ContatoBO() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.contatoDAO= new ContatoDAO();
 	}
 
 	@Override
 	public void salvar(Contato contato) {
-		// TODO Auto-generated method stub
+		this.contatoDAO.salvar(contato);
 		
 	}
 
 	@Override
 	public Contato buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.contatoDAO.buscarPorId(id);
 	}
 
 	@Override

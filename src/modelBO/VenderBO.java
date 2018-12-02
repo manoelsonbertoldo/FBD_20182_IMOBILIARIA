@@ -2,26 +2,28 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.IVenderDAO;
+import modelDAO.VenderDAO;
 import modelVO.Vender;
 
 public class VenderBO implements IVenderBO {
 	
-	
+	IVenderDAO venderDAO;
 
 	public VenderBO() {
-		
+		this.venderDAO=new VenderDAO();
 	}
 
 	@Override
 	public void salvar(Vender vender) {
-		// TODO Auto-generated method stub
+		this.venderDAO.salvar(vender);
 		
 	}
 
 	@Override
 	public Vender buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.venderDAO.buscarPorId(id);
 	}
 
 	@Override

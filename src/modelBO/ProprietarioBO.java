@@ -2,25 +2,28 @@ package modelBO;
 
 import java.util.List;
 
+import modelDAO.IProprietarioDAO;
+import modelDAO.ProprietarioDAO;
 import modelVO.Proprietario;
 
 public class ProprietarioBO implements IProprietarioBO {
-
+IProprietarioDAO proprietarioDAO;
 	public ProprietarioBO() {
 		super();
-		// TODO Auto-generated constructor stub
+this.proprietarioDAO=new ProprietarioDAO();
+
 	}
 
 	@Override
 	public void salvar(Proprietario proprietario) {
-		// TODO Auto-generated method stub
+		this.proprietarioDAO.salvar(proprietario);// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Proprietario buscarPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.proprietarioDAO.buscarPorId(id);
 	}
 
 	@Override
