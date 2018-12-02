@@ -26,7 +26,8 @@ public class CorretorDAO implements ICorretorDAO{
         this.statement.setString(2, corretor.getNome());
         this.statement.setString(3, corretor.getTipo().getValor());
         this.statement.setString(4,corretor.getDocumento());
-        this.result = this.statement.executeQuery();
+//        this.result = this.statement.executeQuery();
+        this.statement.execute();
         this.statement.close();
 		} catch (SQLException ex) {
             Logger.getLogger(CorretorDAO.class.getName()).log(Level.SEVERE, null, ex);

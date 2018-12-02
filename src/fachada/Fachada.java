@@ -111,20 +111,20 @@ public class Fachada implements IFachada{
 //casa
 	@Override
 	public void salvarCasa(Casa casa) {
-		// TODO Auto-generated method stub
+		this.casaBO.salvar(casa);
 		
 	}
 
 	@Override
 	public Casa buscarCasaPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.casaBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Casa> getALLCasa() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.casaBO.getALL();
 	}
 
 	@Override
@@ -148,13 +148,13 @@ public class Fachada implements IFachada{
 	@Override
 	public Cliente buscarClientePorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.clienteBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Cliente> getALLCliente() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.clienteBO.getALL();
 	}
 
 	@Override
@@ -171,20 +171,20 @@ public class Fachada implements IFachada{
 
 	@Override
 	public void salvarContato(Contato contato) {
-		// TODO Auto-generated method stub
+		this.contatoBO.salvar(contato);
 		
 	}
 
 	@Override
 	public Contato buscarContatoPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.contatoBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Contato> getALLContato() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.contatoBO.getALL();
 	}
 
 	@Override
@@ -201,20 +201,20 @@ public class Fachada implements IFachada{
 
 	@Override
 	public void salvarCorretor(Corretor corretor) {
-		// TODO Auto-generated method stub
+		this.corretorBO.salvar(corretor);
 		
 	}
 
 	@Override
 	public Corretor buscarCorretorPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.corretorBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Corretor> getALLCorretor() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.corretorBO.getALL();
 	}
 
 	@Override
@@ -231,20 +231,20 @@ public class Fachada implements IFachada{
 
 	@Override
 	public void salvarEndereco(Endereco endereco) {
-		// TODO Auto-generated method stub
+		this.enderecoBO.salvar(endereco);
 		
 	}
 
 	@Override
 	public Endereco buscarEnderecoPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.enderecoBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Endereco> getALLEndereco() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.enderecoBO.getALL();
 	}
 
 	@Override
@@ -262,19 +262,20 @@ public class Fachada implements IFachada{
 	@Override
 	public void salvarEstado(Estado estado) {
 		// TODO Auto-generated method stub
+		this.estadoBO.salvar(estado);
 		
 	}
 
 	@Override
 	public Estado buscarEstadoPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.estadoBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Estado> getALLEstado() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.estadoBO.getALL();
 	}
 
 	@Override
@@ -292,19 +293,20 @@ public class Fachada implements IFachada{
 	@Override
 	public void salvarImoveis(Imoveis imoveis) {
 		// TODO Auto-generated method stub
+		this.imoveisBO.salvar(imoveis);
 		
 	}
 
 	@Override
 	public Imoveis buscarImoveisPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.imoveisBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Imoveis> getALLImoveis() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.imoveisBO.getALL();
 	}
 
 	@Override
@@ -321,20 +323,20 @@ public class Fachada implements IFachada{
 
 	@Override
 	public void salvarMunicipio(Municipio municipio) {
-		// TODO Auto-generated method stub
+		this.municipioBO.salvar(municipio);
 		
 	}
 
 	@Override
 	public Municipio buscarMunicipioPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.municipioBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Municipio> getALLMunicipio() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.municipioBO.getALL();
 	}
 
 	@Override
@@ -352,19 +354,20 @@ public class Fachada implements IFachada{
 	@Override
 	public void salvarProprietario(Proprietario proprietario) {
 		// TODO Auto-generated method stub
+		this.proprietarioBO.salvar(proprietario);
 		
 	}
 
 	@Override
 	public Proprietario buscarProprietarioPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.proprietarioBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Proprietario> getALLProprietario() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.proprietarioBO.getALL();
 	}
 
 	@Override
@@ -381,20 +384,20 @@ public class Fachada implements IFachada{
 
 	@Override
 	public void salvarVender(Vender vender) {
-		// TODO Auto-generated method stub
+		this.venderBO.salvar(vender);
 		
 	}
 
 	@Override
 	public Vender buscarVenderPorId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.venderBO.buscarPorId(id);
 	}
 
 	@Override
 	public List<Vender> getALLVender() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.venderBO.getALL();
 	}
 
 	@Override

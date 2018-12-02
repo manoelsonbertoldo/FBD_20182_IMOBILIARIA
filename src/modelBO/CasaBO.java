@@ -3,8 +3,8 @@ package modelBO;
 import java.util.List;
 
 import modelDAO.CasaDAO;
-import modelDAO.ICasaDAO;
 import modelVO.Casa;
+import modelVO.ICasaDAO;
 
 public class CasaBO implements ICasaBO{
 ICasaDAO casaDAO;

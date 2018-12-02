@@ -25,12 +25,15 @@ public class VenderDAO implements IVenderDAO{
 	        this.statement = conexao.prepareStatement(SQLUtil.Vender.INSERT);
 	        this.statement.setInt(1,vender.getNumVendas());
 	        this.statement.setDouble(2, vender.getValorVenda());
-	        this.statement.setDouble(3, vender.getDesconto());
-	        this.statement.setString(4, vender.getTipo());
-	        this.statement.setString(5,vender.getFormaPagamento());
-	        this.statement.setString(6,vender.getDataVenda());
+	        this.statement.setDouble(3, vender.getValorTotal());
 	        
-	        this.result = this.statement.executeQuery();
+	        this.statement.setDouble(4, vender.getDesconto());
+	        this.statement.setString(5, vender.getTipo());
+	        this.statement.setString(6,vender.getFormaPagamento());
+	        this.statement.setString(7,vender.getDataVenda());
+	        
+//	        this.result = this.statement.executeQuery();
+	        this.statement.execute();
 	        this.statement.close();
 			} catch (SQLException ex) {
 	            Logger.getLogger(VenderDAO.class.getName()).log(Level.SEVERE, null, ex);

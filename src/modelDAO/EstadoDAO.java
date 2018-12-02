@@ -23,7 +23,8 @@ public class EstadoDAO implements IEstadoDAO{
             this.conexao = SQLConections.getInstance();
             this.statement = this.conexao.prepareStatement(SQLUtil.Estado.INSERT);
             this.statement.setString(1, estado.getNome());
-            statement.execute();
+            this.statement.execute();
+            this.statement.close();
         } catch (SQLException ex) {
             Logger.getLogger(EstadoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

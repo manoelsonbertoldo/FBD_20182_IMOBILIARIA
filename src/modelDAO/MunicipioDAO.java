@@ -23,7 +23,8 @@ public class MunicipioDAO implements IMunicipioDAO{
             this.conexao = SQLConections.getInstance();
             this.statement = this.conexao.prepareStatement(SQLUtil.Municipio.INSERT);
             this.statement.setString(1, municipio.getNome());
-            statement.execute();
+            this.statement.execute();
+            this.statement.close();
         } catch (SQLException ex) {
             Logger.getLogger(MunicipioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

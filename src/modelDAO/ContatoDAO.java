@@ -22,9 +22,10 @@ public class ContatoDAO implements IContatoDAO{
 		try {
             this.conexao = SQLConections.getInstance();
             this.statement = this.conexao.prepareStatement(SQLUtil.Contato.INSERT);
-            statement.setString(1, contato.getTipo().getValor());
-            statement.setString(2, contato.getDescricao());
-            statement.execute();
+            this.statement.setString(1, contato.getTipo().getValor());
+            this.statement.setString(2, contato.getDescricao());
+            this.statement.execute();
+            this.statement.close();
         } catch (SQLException ex) {
             Logger.getLogger(ContatoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

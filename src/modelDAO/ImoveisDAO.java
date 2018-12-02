@@ -23,21 +23,24 @@ public class ImoveisDAO implements IImoveisDAO{
 		try {
 			this.conexao = SQLConections.getInstance();
 	        this.statement = conexao.prepareStatement(SQLUtil.Imoveis.INSERT);
-	        this.statement.setString(1,imoveis.getTipo());
-	        this.statement.setInt(2,imoveis.getRgImovel());
-	        this.statement.setDouble(3, imoveis.getLargura());
-	        this.statement.setDouble(4, imoveis.getComprimento());
-	        this.statement.setString(5, imoveis.getStatus());
-	        this.statement.setInt(6,imoveis.getQntComodos());
-	        this.statement.setInt(7,imoveis.getQntQuartos());
-	        this.statement.setInt(8, imoveis.getQntSalas());
-	        this.statement.setInt(9, imoveis.getSuites());
-	        this.statement.setInt(10, imoveis.getQntGarages());
-	        this.statement.setInt(11,imoveis.getQntBanheiros());
-	        this.statement.setDouble(12,imoveis.getAreaTotal());
-	        this.statement.setDouble(13,imoveis.getValor());
 	        
-	        this.result = this.statement.executeQuery();
+	        this.statement.setInt(1,imoveis.getRgImovel());
+	        this.statement.setDouble(2, imoveis.getLargura());
+	        this.statement.setDouble(3, imoveis.getComprimento());
+	        this.statement.setString(4, imoveis.getStatus());
+	        this.statement.setInt(5,imoveis.getQntComodos());
+	        
+	        this.statement.setInt(6, imoveis.getQntSalas());
+	        this.statement.setInt(7, imoveis.getSuites());
+	        this.statement.setInt(8, imoveis.getQntGarages());
+	        this.statement.setInt(9,imoveis.getQntBanheiros());
+	        this.statement.setDouble(10,imoveis.getAreaTotal());
+	        this.statement.setDouble(11,imoveis.getValor());
+	        this.statement.setInt(12,imoveis.getQntQuartos());
+	        this.statement.setString(13,imoveis.getTipo());
+	        
+	        //this.result = this.statement.executeQuery();
+	        this.statement.execute();
 	        this.statement.close();
 			} catch (SQLException ex) {
 	            Logger.getLogger(ImoveisDAO.class.getName()).log(Level.SEVERE, null, ex);

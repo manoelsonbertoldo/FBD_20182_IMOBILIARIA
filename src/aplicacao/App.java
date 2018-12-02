@@ -1,11 +1,21 @@
 package aplicacao;
 
 import controller.Controller;
+import enuns.TipoContato;
 import enuns.TipoDocumento;
 import fachada.Fachada;
 import fachada.IFachada;
 import modelVO.Apartamento;
+import modelVO.Casa;
 import modelVO.Cliente;
+import modelVO.Contato;
+import modelVO.Corretor;
+import modelVO.Endereco;
+import modelVO.Estado;
+import modelVO.Imoveis;
+import modelVO.Municipio;
+import modelVO.Proprietario;
+import modelVO.Vender;
 import view.TelaCadastro;
 import view.TelaInicial;
 import view.TelaLogin;
@@ -14,18 +24,61 @@ public class App {
 
 	public static void main(String[] args) {
 		 IFachada fachada1 = Fachada.getInstance();
-        Cliente cliente = new Cliente();
-        cliente.setCpf("050");
-        cliente.setNome("Heldon Jose");
-        cliente.setTipo(TipoDocumento.CPF);
-        cliente.setDocumento("11111");
+		 Imoveis imoveis= new Imoveis();
+		 imoveis.setValor(100.00);
+		 imoveis.setLargura(10.0);
+		 imoveis.setComprimento(10.0);
+		 imoveis.setRgImovel(100000);
+		 imoveis.setStatus("vendido");
+		 imoveis.setQntBanheiros(2);
+		 imoveis.setQntComodos(18);
+		 imoveis.setQntGarages(2);
+		 imoveis.setQntQuartos(3);
+		 imoveis.setQntSalas(2);
+		 imoveis.setAreaTotal(100.0);
+		 imoveis.setSuites(2);
+		 imoveis.setTipo("cazsa");
+		 fachada1.salvarImoveis(imoveis);
+//		 Vender vender=new Vender();
+//		 vender.setNumVendas(12);
+//		 vender.setValorVenda(100.0);
+//		 //vender.setValorTotal(vender.getValorVenda()-vender.getDesconto());
+//		 vender.setDesconto(10);
+//		 vender.setValorTotal(vender.getValorVenda()-vender.getDesconto());
+//		 vender.setTipo("dinheiro");
+//		 vender.setFormaPagamento("parcelado");
+//		 vender.setDataVenda("10/10/18");
+//		 fachada1.salvarVender(vender);
+		 
+		 //		 Municipio municipio=new Municipio();
+//		 municipio.setNome("pernambuco");
+//		 fachada1.salvarMunicipio(municipio);
+		 
+//		 Estado estado=new Estado();
+//		 estado.setNome("manu");
+//		 fachada1.salvarEstado(estado);
+//		 Endereco endereco= new Endereco();
+//		 endereco.setCep("4333");
+//		 endereco.setRua("4333");
+//		 endereco.setNumero("32");
+//		 endereco.setBairro("redencao");
+//		 endereco.setEstado("4333");
+//		 fachada1.salvarEndereco(endereco);
+		 
+//       Proprietario proprietario=new Proprietario();
+//    		   proprietario.setCpf("050");
+//       proprietario.setNome("Heldon Jose");
+//       proprietario.setTipo(TipoDocumento.CPF);
+//       proprietario.setDocumento("11111");
+//       fachada1.salvarProprietario(proprietario);
         
 //        
-//        Cliente cliente1 = new Cliente();
-//        cliente1.setCpf("050");
-//        cliente1.setNome("Heldon Jose");
-//        cliente1.setTipo(TipoDocumento.CPF);
-//        cliente1.setDocumento("11111");
+//        Corretor corretor= new Corretor();
+//        corretor.setCpf("050");
+//        corretor.setNome("Heldon Jose");
+//        corretor.setTipo(TipoDocumento.CPF);
+//        corretor.setDocumento("11111");
+//        fachada1.salvarCorretor(corretor);
 //        0
 //        Cliente cliente2 = new Cliente();
 //        cliente2.setCpf("050");
@@ -56,17 +109,23 @@ public class App {
 //        List<Contato> contatos = new ArrayList<>();
 //        contatos.add(contato1);
 //        contatos.add(contato2);
-//        
+//        (
 //        cliente.setContatos(contatos);
-        
-       //fachada1.salvarCliente(cliente);
-      // fachada1.salvarApartamento(apartamento);
-      TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
-      TelaLogin telaLogin= new TelaLogin("LOGIN", 900, 600);
-      TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
-      Controller control= new Controller(telaLogin, telaInicial,cadastro);
-//      		new TelaCadastro("CADASTRO", 900, 600);
-    
+//       Casa casa= new Casa();
+//       casa.setAreaConstruida(15.0);
+//       fachada1.salvarCasa(casa);9
+//       Contato contato= new Contato();
+//       contato.setTipo(TipoContato.EMAIL);
+//       contato.setDescricao("ekfioefhowiefoweif");
+//       fachada1.salvarContato(contato);
+       
+//      // fachada1.salvarApartamento(apartamento);
+//      TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
+//      TelaLogin telaLogin= new TelaLogin("LOGIN", 900, 600);
+//      TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
+//      Controller control= new Controller(telaLogin, telaInicial,cadastro);
+////      		new TelaCadastro("CADASTRO", 900, 600);
+//    
         
     }
 

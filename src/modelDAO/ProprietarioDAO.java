@@ -26,7 +26,8 @@ public class ProprietarioDAO implements IProprietarioDAO{
 	        this.statement.setString(2, proprietario.getNome());
 	        this.statement.setString(3, proprietario.getTipo().getValor());
 	        this.statement.setString(4,proprietario.getDocumento());
-	        this.result = this.statement.executeQuery();
+	        //this.result = this.statement.executeQuery();
+	        this.statement.execute();
 	        this.statement.close();
 			} catch (SQLException ex) {
 	            Logger.getLogger(ProprietarioDAO.class.getName()).log(Level.SEVERE, null, ex);

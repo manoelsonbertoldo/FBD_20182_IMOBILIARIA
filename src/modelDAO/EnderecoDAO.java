@@ -22,15 +22,15 @@ public class EnderecoDAO implements IEnderecoDAO {
 	public void salvar(Endereco endereco) {
 		try {
             conexao = SQLConections.getInstance();
-            statement = conexao.prepareStatement(SQLUtil.Endereco.INSERT);
-            statement.setString(1, endereco.getCep());
-            statement.setString(2, endereco.getRua());
-            statement.setString(3, endereco.getNumero());
-            statement.setString(4, endereco.getBairro());
-            statement.setString(5, endereco.getEstado());
+            this.statement = conexao.prepareStatement(SQLUtil.Endereco.INSERT);
+            this.statement.setString(1, endereco.getCep());
+            this.statement.setString(2, endereco.getRua());
+            this.statement.setString(3, endereco.getNumero());
+            this.statement.setString(4, endereco.getBairro());
+            this.statement.setString(5, endereco.getEstado());
 
-            result = statement.executeQuery();
-
+            this.statement.executeQuery();
+            this.statement.close();
             
 
         } catch (SQLException ex) {

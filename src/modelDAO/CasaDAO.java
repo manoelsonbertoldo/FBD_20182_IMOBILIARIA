@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import modelVO.Apartamento;
 import modelVO.Casa;
+import modelVO.ICasaDAO;
 import sql.SQLConections;
 import sql.SQLUtil;
 
@@ -23,7 +24,10 @@ public class CasaDAO implements ICasaDAO{
             this.conexao = SQLConections.getInstance();
             this.statement = this.conexao.prepareStatement(SQLUtil.Casa.INSERT);
             this.statement.setDouble(1, casa.getAreaConstruida());
-            statement.execute();
+      
+            this.statement.execute();
+            //this.result = this.statement.executeQuery();
+            this.statement.close();
         } catch (SQLException ex) {
             Logger.getLogger(CasaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

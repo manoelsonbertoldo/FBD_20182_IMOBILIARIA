@@ -1,8 +1,6 @@
-package modelDAO;
+package modelVO;
 
 import java.util.List;
-
-import modelVO.Casa;
 
 public interface ICasaDAO {
 	public  void salvar(Casa casa);
