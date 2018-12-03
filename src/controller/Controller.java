@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import view.Mensagens;
 import view.TelaBuscar;
 import view.TelaCadastro;
 import view.TelaExibir;
@@ -25,6 +26,10 @@ public class Controller {
 		this.telaExibir=telaExibir;
 		this.telaBuscar=telaBuscar;
 		this.telaVendas=telaVendas;
+		
+		
+		
+		///////////////////////////Botões tela Login/////////////////
 		telaLogin.getEntrarButton().addActionListener(new ActionListener() {
 			
 			@Override
@@ -35,6 +40,11 @@ public class Controller {
 				
 			}
 		});
+		
+		///////////////////////fim////////////////////
+		
+		///////////Botões tela Inicial "MENU"/////////////////
+		
 		telaInicial.getSairButton().addActionListener(new ActionListener() {
 			
 			@Override
@@ -79,6 +89,12 @@ telaInicial.getVendasButton().addActionListener(new ActionListener() {
 		telaVendas.setVisible(true);
 	}
 });
+
+///////////////////////fim////////////////////
+
+///////////Botões tela Vendas/////////////////
+
+
 telaVendas.getSairButton().addActionListener(new ActionListener() {
 	
 	@Override
@@ -87,6 +103,34 @@ telaVendas.getSairButton().addActionListener(new ActionListener() {
 		System.exit(0);
 	}
 });
+
+
+telaVendas.getCadastraButton().addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		telaVendas.setVisible(false);
+		telaInicial.setVisible(true);
+	}
+});
+
+
+///////////////////////fim////////////////////
+
+///////////Botões tela Exibir/////////////////
+
+
+telaExibir.getCadastraButton().addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		telaExibir.setVisible(false);
+		telaInicial.setVisible(true);
+	}
+});
+
 telaExibir.getSairButton().addActionListener(new ActionListener() {
 	
 	@Override
@@ -95,21 +139,20 @@ telaExibir.getSairButton().addActionListener(new ActionListener() {
 		System.exit(0);
 	}
 });
+
+
+///////////////////////fim////////////////////
+
+///////////Botões tela Buscar/////////////////
+
+
+
 telaBuscar.getSairButton().addActionListener(new ActionListener() {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		System.exit(0);
-	}
-});
-telaExibir.getCadastraButton().addActionListener(new ActionListener() {
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		telaExibir.setVisible(false);
-		telaInicial.setVisible(true);
 	}
 });
 telaBuscar.getCadastraButton().addActionListener(new ActionListener() {
@@ -121,15 +164,38 @@ telaBuscar.getCadastraButton().addActionListener(new ActionListener() {
 		telaInicial.setVisible(true);
 	}
 });
-telaVendas.getCadastraButton().addActionListener(new ActionListener() {
+
+
+/////////////////////Botões tela Cadastro//////////////////////
+
+
+telaCadastro.getSairButton().addActionListener(new ActionListener() {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		telaVendas.setVisible(false);
+		System.exit(0);
+		
+	}
+});
+telaCadastro.getVoltarButton().addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		telaCadastro.setVisible(false);
 		telaInicial.setVisible(true);
 	}
 });
+telaCadastro.getSalvarButton().addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		Mensagens.mensagemSalvar("Dados Salvo com Sucesso!");
+	}
+});
+
 
 
 	}

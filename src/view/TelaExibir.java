@@ -36,7 +36,7 @@ public class TelaExibir extends TelaGeral{
 	
     
 	
-		cadastraButton= new JButton(new ImageIcon ("resouce//botaoCad.png"));
+		cadastraButton= new JButton(new ImageIcon ("resouce//botaoVolt.png"));
 		sairButton= new JButton(new ImageIcon ("resouce//botaoExit.png"));
 		//vendasButton= new JButton(new ImageIcon ("resouce//botaoVen.png"));
 		

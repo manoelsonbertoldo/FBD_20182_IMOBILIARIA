@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 public class TelaCadastro extends TelaGeral{
 	private JButton voltarButton,salvarButton,sairButton;
+	private JLabel voltarLabel,salvarLabel,sairLabel;
 	//label proprietario;
 	private JLabel propLabel,pnomeLabel,pcpfLabel,prgLabel,pruaLabel,pbairroLabel
 	               ,pcidadeLabel,pcepLabel,pestadoLabel,pcelularLabel,pemailLabel;
@@ -36,9 +37,22 @@ public class TelaCadastro extends TelaGeral{
 		setLayout(null);
 		
 		setVisible(false);
-		voltarButton= new JButton(new ImageIcon ("resouce//botaoCad.png"));
+		voltarButton= new JButton(new ImageIcon ("resouce//botaoVolt.png"));
 		sairButton= new JButton(new ImageIcon ("resouce//botaoExit.png"));
-		salvarButton= new JButton(new ImageIcon ("resouce//botaoVen.png"));
+		salvarButton= new JButton(new ImageIcon ("resouce//botaoSav.png"));
+		sairLabel=new JLabel("SAIR");
+		salvarLabel=new JLabel("SALVAR");
+		voltarLabel=new JLabel("VOLTAR");
+		Font grande= new Font("serif", Font.BOLD, 18);
+		voltarLabel.setFont(grande);
+		sairLabel.setFont(grande);
+		salvarLabel.setFont(grande);
+		add(sairButton).setBounds(780, 430, 95, 95);
+		add(sairLabel).setBounds(800, 530, 150, 50);
+		add(salvarButton).setBounds(650, 430, 100, 100);
+		add(salvarLabel).setBounds(670, 530, 200, 50);
+		add(voltarButton).setBounds(30, 430, 100, 100);
+		add(voltarLabel).setBounds(50, 530, 200, 50);
 	}
 	public void proprietario() {
 		
@@ -164,6 +178,16 @@ public class TelaCadastro extends TelaGeral{
 		add(dadosLabel).setBounds(10, 175, 400, 20);
 		
 	}
+	public JButton getVoltarButton() {
+		return voltarButton;
+	}
+	public JButton getSalvarButton() {
+		return salvarButton;
+	}
+	public JButton getSairButton() {
+		return sairButton;
+	}
+	
 
 }
 
