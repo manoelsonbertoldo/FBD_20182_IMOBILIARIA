@@ -16,29 +16,32 @@ import modelVO.Imoveis;
 import modelVO.Municipio;
 import modelVO.Proprietario;
 import modelVO.Vender;
+import view.TelaBuscar;
 import view.TelaCadastro;
+import view.TelaExibir;
 import view.TelaInicial;
 import view.TelaLogin;
+import view.TelaVendas;
 
 public class App {
 
 	public static void main(String[] args) {
 		 IFachada fachada1 = Fachada.getInstance();
-		 Imoveis imoveis= new Imoveis();
-		 imoveis.setValor(100.00);
-		 imoveis.setLargura(10.0);
-		 imoveis.setComprimento(10.0);
-		 imoveis.setRgImovel(100000);
-		 imoveis.setStatus("vendido");
-		 imoveis.setQntBanheiros(2);
-		 imoveis.setQntComodos(18);
-		 imoveis.setQntGarages(2);
-		 imoveis.setQntQuartos(3);
-		 imoveis.setQntSalas(2);
-		 imoveis.setAreaTotal(100.0);
-		 imoveis.setSuites(2);
-		 imoveis.setTipo("cazsa");
-		 fachada1.salvarImoveis(imoveis);
+//		 Imoveis imoveis= new Imoveis();
+//		 imoveis.setValor(100.00);
+//		 imoveis.setLargura(10.0);
+//		 imoveis.setComprimento(10.0);
+//		 imoveis.setRgImovel(100000);
+//		 imoveis.setStatus("vendido");
+//		 imoveis.setQntBanheiros(2);
+//		 imoveis.setQntComodos(18);
+//		 imoveis.setQntGarages(2);
+//		 imoveis.setQntQuartos(3);
+//		 imoveis.setQntSalas(2);
+//		 imoveis.setAreaTotal(100.0);
+//		 imoveis.setSuites(2);
+//		 imoveis.setTipo("cazsa");
+//		 fachada1.salvarImoveis(imoveis);
 //		 Vender vender=new Vender();
 //		 vender.setNumVendas(12);
 //		 vender.setValorVenda(100.0);
@@ -120,14 +123,19 @@ public class App {
 //       fachada1.salvarContato(contato);
        
 //      // fachada1.salvarApartamento(apartamento);
-//      TelaCadastro cadastro= new TelaCadastro("CADASTRO", 900, 600);
-//      TelaLogin telaLogin= new TelaLogin("LOGIN", 900, 600);
-//      TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
-//      Controller control= new Controller(telaLogin, telaInicial,cadastro);
-////      		new TelaCadastro("CADASTRO", 900, 600);
-//    
+		 TelaExibir telaExibir= new TelaExibir("EXIBIR", 900, 600);
+		 TelaBuscar telaBuscar= new TelaBuscar("BUSCAR", 900, 600);
+		 TelaVendas telaVendas= new TelaVendas("VENDAS", 900, 600);
+      TelaCadastro telaCadastro= new TelaCadastro("CADASTRO", 900, 600);
+      TelaLogin telaLogin= new TelaLogin("LOGIN", 900, 600);
+      TelaInicial telaInicial= new TelaInicial("MENU", 900, 600);
+      
+//      		new TelaCadastro("CADASTRO", 900, 60
+      Controller controller= new Controller(telaLogin, telaInicial, telaCadastro, telaExibir, telaBuscar, telaVendas);
         
     }
+
+	
 
 	
 

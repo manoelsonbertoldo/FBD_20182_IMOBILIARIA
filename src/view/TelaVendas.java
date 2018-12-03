@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.ImageIcon;
@@ -8,12 +7,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class TelaExibir extends TelaGeral{
+public class TelaVendas extends TelaGeral{
 //	private JButton cadastraButton,sairButton,buscarButton,exibirButton,vendasButton;
 //	private JLabel cadastrarLabel,sairLabel,buscarLabel,exibirLabel,vendasLabel,mbsLabel;
-	private JButton cadastraButton, sairButton;
 	private JLabel cadastrarLabel,sairLabel;
-	public TelaExibir(String titulo, int x, int y) {
+	private JButton cadastraButton,sairButton;
+	public TelaVendas(String titulo, int x, int y) {
 		super(titulo, x, y);
 		JLabel	fundo= new JLabel(new ImageIcon(getClass().getClassLoader().getResource("fundo1.png")));
 		
@@ -80,6 +79,8 @@ public class TelaExibir extends TelaGeral{
 		return cadastraButton;
 	}
 	
+	
 		
 	}
+
 

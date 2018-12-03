@@ -70,24 +70,48 @@ mbsLabel= new JLabel("IMOBILIÁRIA");
 		return cadastraButton;
 	}
 
-	public void setCadastraButton(JButton cadastraButton) {
-		this.cadastraButton = cadastraButton;
-	}
-
 	public JButton getSairButton() {
 		return sairButton;
-	}
-
-	public void setSairButton(JButton sairButton) {
-		this.sairButton = sairButton;
 	}
 
 	public JButton getBuscarButton() {
 		return buscarButton;
 	}
 
-	public void setBuscarButton(JButton buscarButton) {
-		this.buscarButton = buscarButton;
+	public JButton getExibirButton() {
+		return exibirButton;
 	}
+
+	public JButton getVendasButton() {
+		return vendasButton;
+	}
+
+	public JLabel getExibirLabel() {
+		return exibirLabel;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
